@@ -8,6 +8,7 @@
 body{
     font-family: 'Garamond', serif;
     background-color: rgb(0, 0, 0);
+    padding-top: 80px;
 }
 
 html{
@@ -18,14 +19,25 @@ p{
     color: rgb(255, 255, 255);
 }
 
+/* Smooth transition for the active state */
+.nav-links a {
+    transition: all 0.3s ease-in-out;
+}
+
 nav, .nav-links{
     display: flex;
 }
 
-nav{
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px; /* Explicit height */
+    z-index: 1000; /* Ensure it stays on top */
+    background-color: black; /* Optional: background for better visibility */
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 17vh;
 }
 
 .nav-links{
@@ -38,10 +50,13 @@ nav{
     flex-shrink: 0;
     display:flex;
     align-items: center;
+    justify-content: center;
+    margin-top:50px;
+    margin-bottom: 20px;
 }
 
 .logo-image{
-    height: 100px;
+    height: 130px;
     width:auto;
     cursor: pointer;
 }
@@ -56,7 +71,7 @@ a{
     text-decoration-color: white;
 }
 
-a:hover{
+#desktop-nav a:hover{
     color: white;
     text-decoration: underline;
     text-underline-offset: 1rem;
@@ -66,6 +81,10 @@ a:hover{
 /* Hamburger Menu */
 #hamburger-nav {
     display: none;
+}
+
+#hamburger-nav a:hover{
+    text-decoration: none;
 }
 
 .hamburger-menu {
@@ -84,8 +103,8 @@ a:hover{
 
 .hamburger-icon span {
     width: 100%;
-    height: 2px;
-    background-color: black;
+    height: 3px;
+    background-color: gold;
     transition: all 0.3s ease-in-out;
 }
 
@@ -93,11 +112,17 @@ a:hover{
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
+    border: none;
     width: fit-content;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+}
+
+.menu-links.open {
+    max-height: 300px; /* Expand to show the menu */
+    border: 1px solid gold; /* Add border only when the menu is visible */
 }
 
 .menu-links a {
@@ -105,7 +130,7 @@ a:hover{
     padding: 10px;
     text-align: center;
     font-size: 1.5rem;
-    color: black;
+    color: gold;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
@@ -119,7 +144,7 @@ a:hover{
 }
 
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(10px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -127,5 +152,137 @@ a:hover{
 }
 
 .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(10px, -5px);
 }
+
+.hamburger-icon span:first-child {
+    transform: none;
+  }
+  
+  .hamburger-icon span:first-child {
+    opacity: 1;
+  }
+  
+  .hamburger-icon span:first-child {
+    transform: none;
+  }
+
+  /* Home Page */
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; /* Reduce height slightly to push content higher */
+    padding: 20px;
+    background-color: #000;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/homepage-background.webp');
+    background-size: cover;
+    background-position: center;
+    color: gold;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Space between image and text */
+}
+
+.home-image {
+    order: 1; /* Ensure the image appears on the left */
+}
+
+.home-image img {
+    height: 330px;
+    width: 500px; /* Larger size for better emphasis */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.home-text {
+    max-width: 520px;
+    text-align: left;
+    order: 2; /* Ensure text appears on the right */
+    margin-top: -20px; /* Adjust to move text slightly upwards */
+}
+
+.home-text h1 {
+    font-size: 3.2rem;
+    color: gold;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.home-text p {
+    font-size: 1.5rem;
+    color: white;
+    line-height: 1.8;
+}
+
+/* About us Page */
+
+#about-us {
+    margin-top: 20px;
+    padding: 50px 20px;
+    background-color: black; /* Neutral, professional background */
+    color: white; /* Text color for readability */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: gold; /* Strong emphasis on the heading */
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-text .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: black;
+    background-color: gold; /* Button with black color for bold contrast */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.about-text .btn:hover {
+    background-color: white;
+    color: gold;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 600px;
+    text-align: center; /* Center the image */
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px; /* Rounded corners for a soft look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+}
+
+
