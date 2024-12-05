@@ -1,179 +1,233 @@
 /* For screens smaller than 1200px */
 @media screen and (max-width: 1200px) {
-  /* Hide Desktop Nav and Show Hamburger Menu */
-  #desktop-nav {
-      display: none;
+    /* Hide Desktop Navigation and Show Hamburger Menu */
+    #desktop-nav {
+        display: none;
+    }
+    #hamburger-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+  
+    /* Hamburger Menu Styling */
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
+        cursor: pointer;
+    }
+  
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border: 1px solid gold;
+    }
+  
+    .menu-links.open {
+        display: flex;
+        max-height: 300px; /* Smooth transition */
+    }
+  
+    .menu-links a {
+        padding: 15px;
+        text-align: center;
+        color: gold;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: background-color 0.3s ease-in-out;
+    }
+  
+    .menu-links a:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+    }
   }
-  #hamburger-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+  
+  /* For screens smaller than 768px */
+  @media screen and (max-width: 768px) {
+    /* Adjust Body Padding */
+    body {
+        padding: 0;
+        margin: 0;
+    }
+  
+    /* Logo Adjustments */
+    .logo {
+        margin-bottom: 20px;
+    }
+  
+    .logo-image {
+        height: 80px; /* Smaller logo for mobile */
+        width: auto;
+    }
+  
+    /* Navigation and Sections */
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+  
+    section {
+        padding: 20px;
+    }
+  
+    /* Home Section Adjustments */
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .home-container {
+        gap: 20px;
+    }
+  
+    .home-text {
+        margin-top: 20px;
+    }
+  
+    .home-image img {
+        width: 90%;
+        max-width: 300px;
+    }
+  
+    /* About Section */
+    #about-us {
+        padding: 20px;
+    }
+  
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .about-text {
+        margin-bottom: 20px;
+    }
+  
+    .about-image img {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+  
+    /* Mission Section Adjustments */
+    #mission {
+        padding: 20px;
+    }
+  
+    .mission-container {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .mission-text {
+        margin-bottom: 20px;
+    }
+  
+    .mission-image img {
+        width: 90%;
+        max-width: 300px;
+    }
+  
+    /* Catalogue Section Adjustments */
+    #catalogue {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+  
+    .catalogue-container h2 {
+        font-size: 2rem;
+    }
+  
+    /* Partnerships Section Adjustments */
+    #partnerships {
+        padding: 20px;
+    }
+  
+    .partnerships-container {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .partnerships-container img {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+  
+    /* Contact Section Adjustments */
+    #contact {
+        padding: 20px;
+        text-align: center;
+    }
+  
+    .contact-info-upper-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+  
+    .contact-icon {
+        height: 1.5rem;
+        margin-bottom: 10px;
+    }
   }
-  .menu-links {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
+  
+  /* For screens smaller than 480px (extra small devices) */
+  @media screen and (max-width: 480px) {
+    /* General Adjustments */
+    body {
+        font-size: 14px; /* Smaller font for extra-small devices */
+    }
+  
+    /* Logo Adjustments */
+    .logo-image {
+        height: 60px; /* Smaller logo for very small screens */
+    }
+  
+    /* Button Adjustments */
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+  
+    /* Home Page Adjustments */
+    .home-text h1 {
+        font-size: 2rem; /* Smaller headline */
+    }
+  
+    .home-text p {
+        font-size: 1rem;
+    }
+  
+    /* Partnerships Section */
+    .partnerships-text h2 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+  
+    .partnerships-text p {
+        font-size: 1rem;
+        line-height: 1.6; /* Adjust line height for smaller font */
+    }
+  
+    .partnerships-container img {
+        max-width: 100%; /* Full width for very small screens */
+    }
   }
-  .menu-links a {
-      padding: 10px;
-      text-align: center;
-  }
-}
-
-/* For screens smaller than 768px */
-@media screen and (max-width: 768px) {
-  /* General Body Adjustments */
-  body {
-      padding: 0;
-      margin: 0;
-  }
-
-  /* Logo Adjustments */
-  .logo {
-      margin-bottom: 20px;
-  }
-
-  .logo-image {
-      height: 80px; /* Smaller logo for mobile */
-      width: auto;
-  }
-
-  /* Header Adjustments */
-  nav {
-      flex-direction: column;
-      padding: 10px;
-  }
-
-  /* Sections */
-  section {
-      padding: 20px;
-  }
-
-  /* Home Page Adjustments */
-  #home {
-      flex-direction: column;
-      text-align: center;
-  }
-  .home-container {
-      gap: 20px;
-  }
-  .home-text {
-      margin-top: 20px;
-  }
-  .home-image img {
-      width: 90%;
-      max-width: 300px;
-  }
-
-  /* About Us Adjustments */
-  #about-us {
-      padding: 20px;
-  }
-  .about-container {
-      flex-direction: column;
-      text-align: center;
-  }
-  .about-text {
-      margin-bottom: 20px;
-  }
-  .about-image img {
-      width: 90%;
-      max-width: 300px;
-      margin: 0 auto;
-  }
-
-  /* Mission Section Adjustments */
-  #mission {
-      padding: 20px;
-  }
-  .mission-container {
-      flex-direction: column;
-      text-align: center;
-  }
-  .mission-text {
-      margin-bottom: 20px;
-  }
-  .mission-image img {
-      width: 90%;
-      max-width: 300px;
-  }
-
-  /* Catalogue Section Adjustments */
-  #catalogue {
-      height: auto;
-      padding: 20px;
-      text-align: center;
-  }
-  .catalogue-container h2 {
-      font-size: 2rem;
-  }
-
-  /* Partnerships Section Adjustments */
-  #partnerships {
-      padding: 20px;
-  }
-  .partnerships-container {
-      flex-direction: column;
-      text-align: center;
-  }
-  .partnerships-container img {
-      width: 90%;
-      max-width: 300px;
-      margin: 0 auto;
-  }
-
-  /* Contact Section Adjustments */
-  #contact {
-      padding: 20px;
-      text-align: center;
-  }
-  .contact-info-upper-container {
-      flex-direction: column;
-      padding: 10px;
-  }
-  .contact-icon {
-      height: 1.5rem;
-      margin-bottom: 10px;
-  }
-}
-
-/* For screens smaller than 480px (extra small devices) */
-@media screen and (max-width: 480px) {
-  /* General Adjustments */
-  body {
-      font-size: 14px; /* Smaller font for extra-small devices */
-  }
-
-  /* Logo Adjustments */
-  .logo-image {
-      height: 60px; /* Smaller logo for very small screens */
-  }
-
-  /* Button Adjustments */
-  .btn {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-  }
-
-  /* Home Page Adjustments */
-  .home-text h1 {
-      font-size: 2rem; /* Smaller headline */
-  }
-  .home-text p {
-      font-size: 1rem;
-  }
-
-  /* Partnerships Section */
-  .partnerships-text h2 {
-      font-size: 1.8rem; /* Smaller heading */
-  }
-  .partnerships-text p {
-      font-size: 1rem;
-      line-height: 1.6; /* Adjust line height for smaller font */
-  }
-  .partnerships-container img {
-      max-width: 100%; /* Full width for very small screens */
-  }
-}
+  
 
