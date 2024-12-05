@@ -247,7 +247,7 @@ a{
     font-size: 2.5rem;
     color: gold; /* Strong emphasis on the heading */
     margin-bottom: 20px;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .about-text p {
@@ -280,9 +280,192 @@ a{
 }
 
 .about-image img {
-    width: 100%;
+    width: 65%;
     border-radius: 15px; /* Rounded corners for a soft look */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+    margin-top: 40px;
+    margin-bottom: 30px ;
 }
 
+/* Mission Page */
+#mission {
+    padding: 50px 20px;
+    background-color: black; /* Slightly lighter black for contrast */
+    color: white; /* Text color for readability */
+}
+
+.mission-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    flex-wrap: wrap; /* Makes it responsive */
+}
+
+.mission-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left; /* Align text to the left */
+    margin-top: 20px;
+}
+
+.mission-text h2 {
+    font-size: 2.5rem;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.mission-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d4d4d4; /* Softer white for readability */
+}
+
+.mission-image {
+    flex: 1;
+    max-width: 600px;
+    text-align: center; /* Center the image */
+}
+
+.mission-image img {
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+/* Catalogue Page */
+#catalogue {
+    display: flex; /* Enables flexbox for centering */
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    height: 100vh; /* Full viewport height */
+    background-color: black; /* Background to match your site theme */
+    color: gold; /* Gold color for the text */
+}
+
+.catalogue-text h2 {
+    font-size: 3rem; /* Adjust as needed for visibility */
+    font-weight: bold;
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margins */
+}
+
+/* Contact Section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    height: 70vh;
+    text-align: center; /* Center-align text */
+    background-color: black; /* Optional: Match website theme */
+}
+
+.title {
+    color: gold;
+    font-size: 2.5rem; /* Make the title larger */
+    margin-bottom: 2rem; /* Add space below the title */
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border: 0.1rem solid rgb(163, 163, 163); /* Subtle border */
+    padding: 1rem 2rem;
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center; /* Center icon and text vertically */
+    gap: 0.5rem; /* Space between the icon and the text */
+}
+
+
+.contact-icon {
+    height: 2rem; /* Adjust icon size */
+    width: auto; /* Maintain aspect ratio */
+}
+
+
+.contact-info-container p {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2rem; /* Larger font for readability */
+}
+
+.contact-info-container a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+}
+
+.contact-info-container a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Partnerships Section */
+#partnerships {
+    padding: 50px 20px; /* Add padding for spacing */
+    background-color: black; /* Slightly lighter black background for contrast */
+    color: white; /* Text color for readability */
+    text-align: left; /* Align text to the left */
+}
+
+
+.partnerships-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Constrain width for better readability */
+    margin: 0 auto; /* Center container */
+    gap: 30px; /* Add space between text and image */
+    flex-wrap: wrap; /* Wrap content for smaller screens */
+}
+
+
+.partnerships-text {
+    flex: 1; /* Allow text to take up equal space */
+    max-width: 600px; /* Limit text width for better readability */
+}
+
+.partnerships-text h2 {
+    font-size: 2.5rem;
+    color: gold; /* Gold color for headings */
+    margin-bottom: 20px; /* Add space below heading */
+}
+
+.partnerships-text p {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Improve readability */
+    margin-bottom: 20px; /* Add space below each paragraph */
+    color: #d4d4d4; /* Softer white for text */
+}
+
+.partnerships-text .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    background-color: gold;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.partnerships-text .btn:hover {
+    background-color: white; /* Hover effect */
+    color: gold;
+}
+
+.partnerships-container img {
+    flex: 1; /* Allow image to take up equal space */
+    max-width: 500px; /* Limit image size */
+    width: 100%; /* Make image responsive */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
 

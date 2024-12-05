@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Darcy</title>
+    <title>Darcy Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400&display=swap" rel="stylesheet">
@@ -16,14 +16,33 @@
         </div>
         <div>
             <ul class="nav-links">
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="mission.html">Our Mission</a></li>
                 <li><a href="catalogue.html">Catalogue</a></li>
                 <li><a href="partnerships.html">Partnerships</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-    </nav> 
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">
+            <img src="assets/Logo_Icon.jpg" alt="logo" class="logo-image">
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="togglemenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="togglemenu()">About</a></li>
+                <li><a href="#mission" onclick="togglemenu()">Our Mission</a></li>
+                <li><a href="#catalogue" onclick="togglemenu()">Catalogue</a></li>
+                <li><a href="#projects" onclick="togglemenu()">Partnerships</a></li>
+                <li><a href="#contact" onclick="togglemenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
    
    <!--About us Page-->
 
@@ -42,10 +61,12 @@
                 choices, Darcy is reducing textile waste, promoting environmental responsibility, and making a positive 
                 economic and social impact nationwide.
             </p>
-            <a href="#mission" class="btn">Learn More About Our Mission</a>
+            <a href="mission.html" class="btn">Learn More About Our Mission</a>
         </div>
         <div class="about-image">
-            <img src="assets/sustainable-fashion.jpg" alt="About Darcy Image">
+            <img src="assets/circular-fashion.jpg" alt="About Darcy Image">
         </div>
     </div>
 </section>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darcy Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="index.html"><img src="assets/Logo_Icon.jpg" alt="image logo" class="logo-image"></a>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">
+            <img src="assets/Logo_Icon.jpg" alt="logo" class="logo-image">
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="togglemenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="togglemenu()">About</a></li>
+                <li><a href="#mission" onclick="togglemenu()">Our Mission</a></li>
+                <li><a href="#catalogue" onclick="togglemenu()">Catalogue</a></li>
+                <li><a href="#projects" onclick="togglemenu()">Partnerships</a></li>
+                <li><a href="#contact" onclick="togglemenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+<section id="mission">
+    <div class="mission-container">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>
+                At Darcy, our mission is to transform the fashion industry through sustainability and innovation. 
+                We aim to promote conscious consumption, reduce textile waste, and encourage responsible 
+                fashion choices by fostering a circular fashion ecosystem.
+            </p>
+            <p>
+                By utilizing eco-friendly materials, transparent production practices, and innovative recycling 
+                methods, we are committed to creating a positive impact on the environment and empowering individuals 
+                to make better choices for our planet.
+            </p>
+        </div>
+        <div class="mission-image">
+            <img src="assets/sustainable-fashion.jpg" alt="eco-friendly fashion">
+        </div>
+    </div>
+</section>
+</body>
+</html>

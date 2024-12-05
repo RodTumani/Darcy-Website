@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darcy Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="index.html"><img src="assets/Logo_Icon.jpg" alt="image logo" class="logo-image"></a>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">
+            <img src="assets/Logo_Icon.jpg" alt="logo" class="logo-image">
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="togglemenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="togglemenu()">About</a></li>
+                <li><a href="#mission" onclick="togglemenu()">Our Mission</a></li>
+                <li><a href="#catalogue" onclick="togglemenu()">Catalogue</a></li>
+                <li><a href="#projects" onclick="togglemenu()">Partnerships</a></li>
+                <li><a href="#contact" onclick="togglemenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Partnerships section -->
+     <section id="partnerships">
+        <div class="partnerships-container">
+            <div class="partnerships-text">
+                <h2>Partner with us</h2>
+                <p>
+                    At Darcy, we believe in the power of collaboration to drive innovation and mutual success.
+                    As a growing company, we’re eager to connect with like-minded partners who share our vision and values. 
+                </p>
+                <p>
+                    Whether you’re a fellow startup, an established business, or a creative entrepreneur, let's work together to create meaningful solutions and lasting impact.
+                    Join us on this exciting journey. Let’s grow, innovate, and succeed—together.
+                </p>
+                <a href="contact.html" class="btn">Contact Info</a>
+            </div>
+            <img src="assets/partnerships-img.jpg" alt="partners image">
+        </div>
+     </section>
+    <script src="script.js"></script>
+</body>
+</html>
