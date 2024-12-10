@@ -244,6 +244,7 @@ a{
 }
 
 .about-text {
+    margin-top: 35px;
     flex: 1;
     max-width: 600px;
 }
@@ -344,8 +345,9 @@ a{
 /* Catalogue Page */
 #catalogue {
     display: flex; /* Enables flexbox for centering */
-    align-items: center; /* Centers vertically */
-    justify-content: center; /* Centers horizontally */
+    flex-direction: column; /* Stack text and images vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
     height: 100vh; /* Full viewport height */
     background-color: black; /* Background to match your site theme */
     color: gold; /* Gold color for the text */
@@ -355,8 +357,36 @@ a{
     font-size: 3rem; /* Adjust as needed for visibility */
     font-weight: bold;
     text-align: center; /* Center-align text */
-    margin: 0; /* Remove default margins */
+    margin: 20px 0; /* Add spacing around the text */
 }
+
+.catalogue-images {
+    display: flex; /* Arrange images in a row */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 20px 0; /* Add spacing below the text */
+    gap: 20px; /* Space between images */
+}
+
+.catalogue-images li {
+    flex: 1; /* Ensure equal spacing between images */
+    max-width: 300px; /* Limit image size */
+}
+
+.catalogue-images img {
+    width: 100%; /* Set a fixed width based on the right image */
+    height: auto; /* Set a fixed height based on the right image */
+    object-fit: cover; /* Ensures the image scales properly without distortion */
+    border-radius: 10px; /* Optional: Rounded corners for a polished look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.catalogue-images img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
 
 /* Contact Section */
 #contact {
