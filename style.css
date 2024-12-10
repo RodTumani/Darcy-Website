@@ -46,19 +46,18 @@ nav {
     font-size: 1.6rem;
 }
 
-.logo{
-    flex-shrink: 0;
-    display:flex;
+.logo {
+    flex: 0 0 auto; /* Prevent shrinking */
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:50px;
-    margin-bottom: 20px;
 }
 
-.logo-image{
-    height: 130px;
-    width:auto;
-    cursor: pointer;
+.logo img {
+    max-height: 110px; /* Adjust logo size */
+    width: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove unnecessary margins */
+    margin-top: 10px;
 }
 
 a, .btn{
@@ -78,34 +77,18 @@ a{
     text-decoration-color: rbg(181,181,181);
 }
 
-/* Hamburger Menu */
-/* Default State for Hamburger Nav */
+/* Hamburger Navigation */
 #hamburger-nav {
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    background-color: #000; /* Match menu links' background */
-    color: #fff;
-    position: sticky; /* Ensure it stays at the top */
+    justify-content: space-between; /* Space between logo and hamburger icon */
+    background-color: black;
+    padding: 10px 20px;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-/* Show Hamburger Nav for Smaller Screens */
-@media screen and (max-width: 1200px) {
-    #hamburger-nav {
-        display: flex;
-    }
-}
-
-#hamburger-nav a:hover{
-    text-decoration: none;
-}
-
-.hamburger-menu {
-    position: relative;
-    display: inline-block;
 }
 
 .hamburger-icon {
@@ -113,64 +96,78 @@ a{
     flex-direction: column;
     justify-content: space-between;
     height: 24px;
-    width: 30px;
+    width: 40px;
     cursor: pointer;
     z-index: 1001;
+    margin-right: 10px; /* Small margin for spacing from the edge */
+    position: relative; /* Relative positioning to better control alignment */
+    align-self: center; /* Ensures the icon aligns vertically */
 }
 
+/* Hamburger lines */
 .hamburger-icon span {
+    display: block;
+    width: 100%; /* Full width of the parent container */
     height: 3px;
     background-color: gold;
     border-radius: 2px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.menu-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgb(0, 0, 0);
-    border: none;
-    width: fit-content;
-    max-height: 0;
-    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
-.menu-links.open {
-    max-height: 300px; /* Expand to show the menu */
-    border: 1px solid gold; /* Add border only when the menu is visible */
-}
-
-.menu-links a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: gold;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.menu-links li {
-    list-style: none;
-}
-
-.menu-links.open {
-    max-height: 300px;
-}
-
+/* Transform the icon when open */
 .hamburger-icon.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Hide the middle line */
 }
 
 .hamburger-icon.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
+
+/* Menu Links */
+.menu-links {
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Transparent */
+    max-height: 0; /* No height */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Align below the hamburger icon */
+    right: 20px; /* Add spacing from the right edge */
+    background-color: black;
+    border: 1px solid gold;
+    width: 200px; /* Consistent width */
+    z-index: 999;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* When the menu is open */
+.menu-links.open {
+    visibility: visible;
+    opacity: 1;
+    max-height: 300px;
+}
+
+.menu-links li {
+    list-style: none;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: gold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+    color: white;
+}
+
 
   /* Home Page */
 
@@ -387,7 +384,6 @@ a{
 }
 
 
-
 /* Contact Section */
 #contact {
     display: flex;
@@ -420,12 +416,10 @@ a{
     gap: 0.5rem; /* Space between the icon and the text */
 }
 
-
 .contact-icon {
     height: 2rem; /* Adjust icon size */
     width: auto; /* Maintain aspect ratio */
 }
-
 
 .contact-info-container p {
     margin: 0; /* Remove default margin */
@@ -449,7 +443,6 @@ a{
     text-align: left; /* Align text to the left */
 }
 
-
 .partnerships-container {
     display: flex;
     align-items: center;
@@ -459,7 +452,6 @@ a{
     gap: 30px; /* Add space between text and image */
     flex-wrap: wrap; /* Wrap content for smaller screens */
 }
-
 
 .partnerships-text {
     flex: 1; /* Allow text to take up equal space */
@@ -504,3 +496,107 @@ a{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
 }
 
+/* Media Queries */
+
+/* For screens smaller than 1200px (large tablets and below) */
+@media screen and (max-width: 1200px) {
+    /* Hide Desktop Navigation */
+    #desktop-nav {
+        display: none;
+    }
+
+    /* Show Hamburger Navigation */
+    #hamburger-nav {
+        display: flex; /* Enable hamburger nav */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Separate logo and hamburger icon */
+        background-color: black;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Menu Links Styling */
+    .menu-links {
+        position: absolute;
+        top: 100%; /* Position below the hamburger icon */
+        right: 10px; /* Prevent menu from touching the screen edge */
+        background-color: black;
+        border: 1px solid gold;
+        width: 200px;
+        flex-direction: column; /* Stack links vertically */
+        visibility: hidden; /* Hidden by default */
+        opacity: 0; /* Transparent */
+        max-height: 0; /* No height */
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Open State for Menu Links */
+    .menu-links.open {
+        visibility: visible; /* Make visible */
+        opacity: 1; /* Fully opaque */
+        max-height: 300px; /* Allow enough height for the menu */
+    }
+
+    .menu-links li {
+        text-align: left; /* Align links to the left */
+        padding: 10px 15px;
+    }
+
+    .menu-links a {
+        text-decoration: none;
+        color: gold;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .menu-links a:hover {
+        color: white; /* Highlight links on hover */
+    }
+}
+
+/* For screens smaller than 768px (mobile devices) */
+@media screen and (max-width: 768px) {
+    /* Adjust Logo for Smaller Screens */
+    .logo img {
+        max-height: 50px; /* Resize logo */
+        margin: 0; /* Remove extra margins */
+    }
+
+    /* Make Menu Links Full Width */
+    .menu-links {
+        width: 100%; /* Expand to full width */
+        right: 0; /* Align with the right side of the screen */
+    }
+
+    .menu-links li {
+        text-align: center; /* Center-align links */
+    }
+
+    .menu-links a {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+        padding: 12px 0;
+    }
+}
+
+/* For screens smaller than 480px (extra small devices) */
+@media screen and (max-width: 480px) {
+    /* Resize Logo Further */
+    .logo img {
+        max-height: 40px; /* Smaller logo for extra small screens */
+    }
+
+    /* Adjust Hamburger Icon */
+    .hamburger-icon {
+        height: 20px;
+        width: 25px; /* Adjust icon size */
+    }
+
+    .menu-links a {
+        font-size: 0.9rem; /* Reduce font size */
+    }
+}

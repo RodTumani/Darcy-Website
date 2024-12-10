@@ -1,14 +1,9 @@
 function togglemenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-
-    if (menu.classList.contains("open")) {
-        menu.style.maxHeight = "0";
-    } else {
-        menu.style.maxHeight = `${menu.scrollHeight}px`;
-    }
-
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+    const menuLinks = document.querySelector('.menu-links');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    menuLinks.classList.toggle('open'); // Toggle the menu visibility
+    hamburgerIcon.classList.toggle('open'); // Toggle the animation for the icon
 }
+
+
 
